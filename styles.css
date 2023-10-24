@@ -1,0 +1,132 @@
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* @keyframes hover {
+    0%, 100% {
+        box-shadow: 2px 2px;
+    }
+    50% {
+    }
+} */
+
+.styled-button {
+    background-color: #4CAF50; /* Green background */
+    border: 30; /* Removes border */
+    color: white; /* White text color */
+    padding: 12px 24px; /* Top-bottom and left-right padding */
+    text-align: center; /* Centers text */
+    text-decoration: double; /* Removes underline */
+    display: inline-block; /* Inline-level block container */
+    font-size: 16px; /* Text size */
+    margin: 4px 2px; /* Margin */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s;/* Smooth transition for background color */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px;
+    gap: 10px;
+}
+
+.box {
+
+    border: 3px solid #666;
+    background-color: gray;
+    border-radius: .5em;
+    padding: 10px;
+    cursor: move;
+    transition: transform 0.2s;
+}
+
+
+.box.over {
+    border: 3px dotted #666;
+}
+
+.styled-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    border-color: #c5542b;
+}
+
+.styled-button:active {
+    background-color: #45a049; /* Darker green on hover */
+    border-color: #c5542b;
+    transform: translateY(2px);
+}
+
+.draggable {
+    visibility: hidden;
+    width: 120px;
+    height: 40px;
+    background-image: linear-gradient(
+        60deg,
+        hsl(240deg 94% 51%) 0%,
+        hsl(229deg 100% 49%) 11%,
+        hsl(225deg 100% 50%) 22%,
+        hsl(222deg 100% 50%) 33%,
+        hsl(219deg 100% 50%) 44%,
+        hsl(216deg 100% 50%) 56%,
+        hsl(213deg 100% 49%) 67%,
+        hsl(211deg 100% 49%) 78%,
+        hsl(208deg 100% 48%) 89%,
+        hsl(206deg 95% 48%) 100%
+    );
+    border-radius: 10px;
+    position: absolute;
+    cursor: grab;
+    box-shadow: 1px 1px 1px 1px;
+    transition: box-shadow .2s, top .05s, left .05s;
+    /* animation: hover 5s infinite; */
+}
+
+.slot {
+    width: 120px;
+    height: 40px;
+    background-color: rgba(50 100 200 / .5);
+    position: absolute;
+    cursor: grab;
+}
+
+textarea {
+    width: 100%;
+    text-align:center;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 3px 1px darkslategray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    background-color: transparent;
+
+    color: white;
+    resize: none;
+}
+
+/* textarea:focus { */
+    /* width: 100%;
+    text-align:center;
+    border-radius: 8px;
+    border: 0px solid white;
+    background: transparent;
+    color: white;
+    resize: none; */
+/* } */
+
+
+
+.draggable:active {
+    cursor: grabbing;
+    box-shadow: 2px 2px 4px, 8px 8px 8px grey;
+    /* box-shadow: 0px 0px 1px 2px black; */
+}
+
+.doodle {
+    box-shadow: 2px 2px 5px, 4px 4px 10px grey;
+}
