@@ -1,0 +1,25 @@
+{
+  "name": "samvkes.github.io",
+  "version": "1.0.0",
+  "description": "my site",
+  "main": "script.js",
+  "scripts": {
+    "test": "vroom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samvkes/Samvkes.github.io.git"
+  },
+  "keywords": [
+    "site"
+  ],
+  "author": "sam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samvkes/Samvkes.github.io/issues"
+  },
+  "homepage": "https://github.com/Samvkes/Samvkes.github.io#readme",
+  "dependencies": {
+    "drag-drop-touch": "^1.3.1"
+  }
+}
