@@ -15,6 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
         item.addEventListener('drag', handleDrag);
     });
 
+    window.addEventListener('touchstart', function (e) {
+        let items = document.querySelectorAll('.container .box');
+        items.forEach(function (item) {
+            item.setAttribute("draggable", "true");
+        });
+
+    });
 
 
 
@@ -116,6 +123,7 @@ function handleDragEnd(e) {
     this.style.opacity = '1';
     items.forEach( function (item) {
         item.classList.remove('over');
+        item.setAttribute("draggable", "false");
     });
 } 
 
