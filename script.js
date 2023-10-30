@@ -15,6 +15,43 @@ document.addEventListener("DOMContentLoaded", function () {
         item.addEventListener('drag', handleDrag);
     });
 
+    dragElem.addEventListener('pointerdown', function (e) {
+        isDragging = true;
+        lastBox = true;
+        offsetX = e.clientX - dragElem.getBoundingClientRect().left;
+        offsetY = e.clientY - dragElem.getBoundingClientRect().top;
+        dragElem.style.cursor = 'grabbing';
+    });
+
+
+    window.addEventListener('pointermove', function (e) {
+        if (isDragging) {
+            dragElem.style.left = e.clientX - offsetX + 'px';
+            dragElem.style.top = e.clientY - offsetY + 'px';
+        }
+    });
+
+
+    window.addEventListener('pointerup', function (e) {
+        isDragging = false;
+        if (lastBox) {
+            dragElem.style.cursor = 'grab';
+            if (Math.abs(e.clientX - (parseInt(window.getComputedStyle(slotElem).getPropertyValue("left")) + 50)) < 50 &&
+                Math.abs(e.clientY - (parseInt(window.getComputedStyle(slotElem).getPropertyValue("top")) + 50)) < 50)
+            {
+                dragElem.style.top = window.getComputedStyle(slotElem).getPropertyValue("top")
+                dragElem.style.left = window.getComputedStyle(slotElem).getPropertyValue("left")
+                slotElem.style.top = parseInt(window.getComputedStyle(slotElem).getPropertyValue("top")) + 50 + "px"
+            }
+            lastBox = false;
+        }
+        if (Math.abs(e.clientY - parseInt(window.getComputedStyle(slotElem).getPropertyValue("top"))) < 100)
+        {
+            dragElem.style.top = window.getComputedStyle(slotElem).getPropertyValue("top")
+        }
+        // this.window.alert(parseInt(window.getComputedStyle(slotElem).getPropertyValue("top")) + " - " + slotElem.style.top);
+
+    });
     // window.addEventListener('', function (e) {
     //     let items = document.querySelectorAll('.container .box');
     //     items.forEach(function (item) {

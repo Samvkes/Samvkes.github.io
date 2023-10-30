@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    dragElem.addEventListener('mousedown', function (e) {
+    dragElem.addEventListener('pointerdown', function (e) {
         isDragging = true;
         lastBox = true;
         offsetX = e.clientX - dragElem.getBoundingClientRect().left;
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    window.addEventListener('mousemove', function (e) {
+    window.addEventListener('pointermove', function (e) {
         if (isDragging) {
             dragElem.style.left = e.clientX - offsetX + 'px';
             dragElem.style.top = e.clientY - offsetY + 'px';
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    window.addEventListener('mouseup', function (e) {
+    window.addEventListener('pointerup', function (e) {
         isDragging = false;
         if (lastBox) {
             dragElem.style.cursor = 'grab';

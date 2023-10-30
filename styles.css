@@ -138,7 +138,6 @@ body {
 
 
 .draggable {
-    visibility: hidden;
     width: 120px;
     height: 40px;
     background-image: linear-gradient(
